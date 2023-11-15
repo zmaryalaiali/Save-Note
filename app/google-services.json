@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "841373217523",
+    "project_id": "save-note-f895e",
+    "storage_bucket": "save-note-f895e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841373217523:android:d9123211995d9df7bffd86",
+        "android_client_info": {
+          "package_name": "com.zmaryalaiali.savenote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOakWq9HJdCUsSmSleTdbsVjDUPL2DfAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

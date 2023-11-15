@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Save Note</string>
+    <string name="signup_text">welcome to \n Save Note</string>
+    <string name="signup_text2">Please signup with your Name,Email and Password </string>
+</resources>
