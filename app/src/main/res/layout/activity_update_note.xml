@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateNoteActivity">
+    tools:context=".UpdateNoteActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_create_note"
+        android:id="@+id/toolbar_update_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
         <EditText
-            android:id="@+id/et_title"
+            android:id="@+id/et_title_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your Note Title "
@@ -25,11 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarSize="15dp"
-        android:layout_below="@+id/toolbar_create_note"
+        android:layout_below="@+id/toolbar_update_note"
         android:scrollbars="vertical"
         >
         <EditText
-            android:id="@+id/et_description"
+            android:id="@+id/et_description_update"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Enter your Description here below"
@@ -43,7 +43,7 @@
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/save_fab"
+        android:id="@+id/fab_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

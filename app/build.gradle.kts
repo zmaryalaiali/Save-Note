@@ -47,6 +47,11 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore:24.9.0")
     // firebaseAuth dependencies
     implementation("com.google.firebase:firebase-auth:22.2.0")
+    // FirebaseUI for Cloud Firestore
+    implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
+
+    // FirebaseUI for Firebase Auth
+    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
 
 
 }

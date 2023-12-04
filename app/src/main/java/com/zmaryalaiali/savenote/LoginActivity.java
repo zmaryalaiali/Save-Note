@@ -14,9 +14,12 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
@@ -39,10 +42,25 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.et_password);
         tvForgetPassword = findViewById(R.id.tv_forger_password);
 
-
-        progressDialog = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
-        firebaseUser = auth.getCurrentUser();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        progressDialog = new ProgressDialog(this);
+        Intent intent = getIntent();
+
+        if (intent.getBooleanExtra("isEmail", false)) {
+            Toast.makeText(this, "email sent", Toast.LENGTH_SHORT).show();
+            String email, password;
+            email = intent.getStringExtra("email");
+            password = intent.getStringExtra("password");
+            etEmail.getEditText().setText(email);
+            etPassword.getEditText().setText(password);
+        } else {
+            if (firebaseUser != null) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
+            }
+            Toast.makeText(this, "email not sent", Toast.LENGTH_SHORT).show();
+        }
         // this is Login button
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +82,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                if (firebaseUser.isEmailVerified()) {
+                                FirebaseUser firebaseUser1 = FirebaseAuth.getInstance().getCurrentUser();
+                                if (firebaseUser1.isEmailVerified()) {
                                     progressDialog.dismiss();
                                     Toast.makeText(LoginActivity.this, "Sign in go ahead", Toast.LENGTH_SHORT).show();
                                     // go ahead to new activity
@@ -89,8 +108,8 @@ public class LoginActivity extends AppCompatActivity {
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(LoginActivity.this,SinupActivity.class));
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, SinupActivity.class));
+//                startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
 
             }
@@ -99,8 +118,8 @@ public class LoginActivity extends AppCompatActivity {
         tvForgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent = new Intent(LoginActivity.this, ForgetPassword.class);
-                    startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this, ForgetPassword.class);
+                startActivity(intent);
             }
         });
 

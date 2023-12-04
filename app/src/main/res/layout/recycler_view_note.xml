@@ -23,14 +23,18 @@
             android:layout_marginBottom="10dp"
             android:padding="5dp"
             android:text="This is Your Developer"
+            android:maxLines="1"
             android:textSize="20sp" />
 
         <ImageView
-            android:id="@+id/iv_note"
+            android:id="@+id/iv_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/ic_more" />
       <TextView
           android:id="@+id/tv_description"
@@ -40,6 +44,7 @@
           android:padding="10dp"
           android:textSize="17sp"
           android:text="Description is Good "
+          android:maxLines="1"
           android:layout_below="@+id/tv_title"/>
 
         <TextView
@@ -54,15 +59,17 @@
             android:layout_below="@id/tv_description"/>
 
         <TextView
-            android:id="@+id/tv_end_date"
+            android:id="@+id/tv_update_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_below="@+id/tv_create_date"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="45/54/2025"
-           android:layout_alignParentRight="true"
-            android:layout_below="@+id/tv_description"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

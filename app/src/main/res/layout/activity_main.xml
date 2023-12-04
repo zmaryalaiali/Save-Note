@@ -19,11 +19,7 @@
         android:layout_below="@+id/notes_toolbar"
         android:scrollbarSize="10dp"
         android:overScrollMode="ifContentScrolls"
-        tools:listitem="@layout/recycler_view_note"
-        tools:itemCount="2"
-        android:scrollbars="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
+        android:scrollbars="vertical"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/create_note_fab"
